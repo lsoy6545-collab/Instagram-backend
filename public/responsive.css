@@ -1,0 +1,47 @@
+@media (max-width: 1024px) {
+    .instagram-wrapper {
+        width: 90%;
+    }
+
+    form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 750px) {
+    body {
+        background-color: #ffffff;
+    }
+
+    .instagram-wrapper {
+        width: 90%;
+    }
+
+    .instagram-phone {
+        display: none;
+    }
+
+    .instagram-continue {
+        width: 100%;
+    }
+
+    .container {
+        border: 1px solid transparent;
+    }
+
+    /* Ajuste opcional para formularios en móvil */
+    form {
+        width: 100%;
+        padding: 0 25px;
+    }
+
+    form input {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    form button {
+        font-size: 15px;
+        padding: 10px 0;
+    }
+}

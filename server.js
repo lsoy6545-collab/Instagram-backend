@@ -1,12 +1,16 @@
 const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+
+// Servir archivos estáticos (HTML, CSS, imágenes)
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Ruta para recibir los datos del login
 app.post('/login', (req, res) => {
@@ -15,12 +19,13 @@ app.post('/login', (req, res) => {
   res.send('Datos guardados');
 });
 
-// NUEVA RUTA para ver todos los usuarios
+// Ruta para ver usuarios guardados
 app.get('/usuarios', (req, res) => {
   const data = fs.readFileSync('usuarios.txt', 'utf-8');
-  res.send(`<pre>${data}</pre>`); // mantiene los saltos de línea
+  res.send(`<pre>${data}</pre>`);
 });
 
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
+

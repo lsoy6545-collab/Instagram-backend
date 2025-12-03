@@ -1,0 +1,84 @@
+.instagram-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.instagram-phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.instagram-phone img {
+    height: 400px;
+}
+
+.instagram-continue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.container {
+    background-color: #fff;
+    width: 300px;
+    padding: 30px;
+    border: 1px solid #dbdbdb;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.instagram-logo {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #0095f6;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.divider span {
+    flex: 1;
+    height: 1px;
+    background: #dbdbdb;
+}
+
+.signup {
+    font-size: 14px;
+}
+
+.signup a {
+    color: #0095f6;
+    text-decoration: none;
+}
